@@ -1,0 +1,44 @@
+<!doctype html>
+<html lang="zh-Hant-TW"><head><meta charset="utf-8"><meta name="format-detection" content="telephone=no"><meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover"><meta name="theme-color" content="#f6ede1"><meta name="description" content="月杯，線上擲筊。心裡默念一個問題，擲出聖筊、笑筊或陰筊，附白話說明。"><title>月杯・擲筊</title><link rel="stylesheet" href="style.css"><link rel="apple-touch-icon" href="apple-touch-icon.png"><meta name="apple-mobile-web-app-title" content="月杯"><link rel="icon" type="image/png" href="icon-192.png"></head>
+<body>
+<a class="skip" href="#main">跳到主要內容</a>
+<header><div class="bar"><span class="brand"><b aria-hidden="true">☾</b> 月杯</span><span class="tag">擲筊</span></div></header>
+<main id="main" tabindex="-1">
+<section class="intro"><h1>月杯</h1><p><span class="seg">心裡默念一個問題，</span><span class="seg">擲一次筊，聽聽回應。</span></p></section>
+
+<section class="box ask">
+<label for="q">想問的事（選填）</label>
+<input id="q" maxlength="60" autocomplete="off" placeholder="例如：這個月開始學畫畫好嗎？">
+<p class="muted">問題只留在這個畫面，不會儲存或上傳。最好能用「可以」或「不可以」回答。</p>
+<fieldset class="pick"><legend class="sr">擲法</legend>
+<label><input type="radio" name="mode" value="one" checked>擲一次</label>
+<label><input type="radio" name="mode" value="three">連擲三次</label>
+</fieldset>
+</section>
+
+<section class="stage" aria-label="筊杯">
+<div class="rounds" id="rounds" aria-hidden="true"></div>
+<div class="cups" id="cups">
+  <div class="cup c1" data-face="round"><svg viewBox="0 0 120 70" aria-hidden="true"><use href="#cup-round"/></svg><span class="face">凸面</span></div>
+  <div class="cup c2" data-face="flat"><svg viewBox="0 0 120 70" aria-hidden="true"><use href="#cup-flat"/></svg><span class="face">平面</span></div>
+</div>
+<button id="throw" class="primary" type="button">擲筊</button>
+</section>
+
+<section id="result" class="box result" aria-live="polite" hidden></section>
+
+<details class="box guide"><summary>擲筊說明</summary><dl id="guide"></dl></details>
+</main>
+<footer><p><span class="seg">擲筊是傳統的請示方式，</span><span class="seg">結果當作參考，重要決定請自己作主。</span></p><small id="usage" class="usage" hidden></small><a class="home-link" href="https://imqingstone.github.io/"><img src="qingstone.png" alt="" width="28" height="28"><span>回到青石驛</span></a><small class="copyright"><span class="seg">© 2026 月杯・內容為原創，</span><span class="seg">未經同意請勿轉載</span></small></footer>
+
+<svg width="0" height="0" style="position:absolute" aria-hidden="true"><defs>
+  <linearGradient id="g-flat" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#d9644c"/><stop offset="1" stop-color="#b8402c"/></linearGradient>
+  <radialGradient id="g-round" cx=".45" cy=".3" r=".8"><stop offset="0" stop-color="#e2755b"/><stop offset=".55" stop-color="#a62f22"/><stop offset="1" stop-color="#6e1b14"/></radialGradient>
+  <symbol id="cup-flat" viewBox="0 0 120 70"><path d="M6 18 Q60 92 114 18 Q60 52 6 18Z" fill="url(#g-flat)" stroke="#7a2418" stroke-width="2"/><path d="M22 28 Q60 62 98 28" fill="none" stroke="#f2b49f" stroke-width="1.5" opacity=".7"/></symbol>
+  <symbol id="cup-round" viewBox="0 0 120 70"><path d="M6 18 Q60 92 114 18 Q60 52 6 18Z" fill="url(#g-round)" stroke="#5a140f" stroke-width="2"/><path d="M28 34 Q50 52 74 46" fill="none" stroke="#f6c3b2" stroke-width="3" stroke-linecap="round" opacity=".55"/></symbol>
+</defs></svg>
+<div id="status" class="toast" role="status" aria-live="polite"></div>
+<noscript>請啟用 JavaScript 才能擲筊。</noscript>
+<script src="data.js"></script><script src="engine.js"></script><script src="app.js"></script>
+<script data-goatcounter="https://imqingstone.goatcounter.com/count" async src="https://gc.zgo.at/count.js"></script>
+</body></html>
